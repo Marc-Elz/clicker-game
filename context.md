@@ -19,6 +19,9 @@ src/App.vue                      # root
 - `Upgrade`: id, name, baseCost, costMultiplier (e.g. 1.15), count, pointsPerSecond
 - `GameState`: points, totalClicks, pointsPerClick, upgrades: Upgrade[], lastSaved
 
+## Tooling
+- **Vitest** `globals: true` — geen imports nodig voor `describe`/`it`/`expect`/`vi` in testbestanden
+
 ## Vue 3 Best Practices
 - All logic in `useGameState.ts`; only `ClickerGame.vue` imports it — passes props down, handles emits up
 - Granular `ref`s for primitives; derived values (currentCost, totalPps) via `computed`
