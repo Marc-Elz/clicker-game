@@ -10,9 +10,9 @@
 
 ## Fase 2: Types & Datamodel
 
-🔲 Definieer de `Upgrade` interface in `gameTypes.ts`
-🔲 Definieer de `GameState` interface in `gameTypes.ts`
-🔲 Definieer de initiële game state (startwaarden voor punten, clicks, upgrades)
+✅ Definieer de `Upgrade` interface in `gameTypes.ts`
+✅ Definieer de `GameState` interface in `gameTypes.ts`
+✅ Definieer de initiële game state (startwaarden voor punten, clicks, upgrades)
 
 ## Fase 3: Game Logic (useGameState)
 
@@ -51,7 +51,7 @@
 
 🔲 Voeg inline layout-stijl toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)
 🔲 Voeg inline stijl toe aan `ScoreDisplay.vue` (groot, leesbaar puntentelling)
-🔲 Voeg inline stijl toe aan `GameButton.vue` (grote klikknop met active-state via ref)
+🔲 Voeg inline stijl toe aan `GameButton.vue` (grote klikknop in de vorm van een laptop met active-state via ref)
 🔲 Voeg inline stijl toe aan `UpgradeItem.vue` (rij-layout met naam, kosten en koopknop)
 🔲 Voeg inline animatiestijl toe aan `GameButton.vue` (visuele feedback bij klik)
 🔲 Voeg inline disabled-stijl toe aan `UpgradeItem.vue` (gedimd als niet betaalbaar)
