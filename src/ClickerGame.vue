@@ -28,6 +28,10 @@ const { state, click, buyUpgrade, currentCosts, totalPointsPerSecond } = useGame
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   padding: 32px;
+  box-sizing: border-box;
+  background: var(--color-bg);
 }
 </style>

@@ -15,18 +15,23 @@ defineProps<{
 <style scoped>
 .score-display {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .points {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0 0 4px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--color-text);
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
 .pps {
   font-size: 1rem;
-  color: #888;
+  color: var(--color-muted);
   margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 </style>

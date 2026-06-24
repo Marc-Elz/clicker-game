@@ -1,14 +1,16 @@
 <template>
   <div class="upgrade-shop">
     <h2 class="title">Upgrades</h2>
-    <UpgradeItem
-      v-for="upgrade in upgrades"
-      :key="upgrade.id"
-      :upgrade="upgrade"
-      :cost="currentCosts.get(upgrade.id) ?? 0"
-      :can-afford="points >= (currentCosts.get(upgrade.id) ?? Infinity)"
-      @buy="$emit('buy', $event)"
-    />
+    <div class="list">
+      <UpgradeItem
+        v-for="upgrade in upgrades"
+        :key="upgrade.id"
+        :upgrade="upgrade"
+        :cost="currentCosts.get(upgrade.id) ?? 0"
+        :can-afford="points >= (currentCosts.get(upgrade.id) ?? Infinity)"
+        @buy="$emit('buy', $event)"
+      />
+    </div>
   </div>
 </template>
 
@@ -32,7 +34,19 @@ defineEmits<{ (e: 'buy', id: string): void }>()
 }
 
 .title {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(136, 146, 176, 0.15);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 </style>

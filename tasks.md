@@ -48,9 +48,9 @@
 
 ## Fase 6: Styling
 
-🔲 Voeg scoped CSS toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)
-🔲 Voeg scoped CSS toe aan `ScoreDisplay.vue` (groot, leesbaar puntentelling)
-🔲 Voeg scoped CSS toe aan `GameButton.vue` (grote klikknop in de vorm van een laptop met active-state via ref)
-🔲 Voeg scoped CSS toe aan `UpgradeItem.vue` (rij-layout met naam, kosten en koopknop)
-🔲 Voeg animatie-CSS toe aan `GameButton.vue` (visuele feedback bij klik)
-🔲 Voeg disabled-stijl toe aan `UpgradeItem.vue` (gedimd als niet betaalbaar)
+✅ Voeg scoped CSS toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)
+✅ Voeg scoped CSS toe aan `ScoreDisplay.vue` (groot, leesbaar puntentelling)
+✅ Voeg scoped CSS toe aan `GameButton.vue` (grote klikknop in de vorm van een laptop met active-state via ref)
+✅ Voeg scoped CSS toe aan `UpgradeItem.vue` (rij-layout met naam, kosten en koopknop)
+✅ Voeg animatie-CSS toe aan `GameButton.vue` (visuele feedback bij klik)
+✅ Voeg disabled-stijl toe aan `UpgradeItem.vue` (gedimd als niet betaalbaar)
