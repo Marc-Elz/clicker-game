@@ -1,13 +1,25 @@
-import { reactive, computed, onMounted, onUnmounted } from 'vue'
+import { reactive, computed, watch, onMounted, onUnmounted } from 'vue'
 import { createInitialState } from '../types/gameTypes'
 import type { GameState, Upgrade } from '../types/gameTypes'
+
+const STORAGE_KEY = 'clicker-game-state'
+
+export function loadState(): GameState {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (raw === null) return createInitialState()
+    return JSON.parse(raw) as GameState
+  } catch {
+    return createInitialState()
+  }
+}
 
 export function upgradeCost(upgrade: Upgrade): number {
   return Math.floor(upgrade.baseCost * upgrade.costMultiplier ** upgrade.count)
 }
 
 export function useGameState() {
-  const state: GameState = reactive(createInitialState())
+  const state: GameState = reactive(loadState())
 
   function click() {
     state.points += state.pointsPerClick
@@ -33,6 +45,17 @@ export function useGameState() {
     upgrade.count++
   }
 
+  function saveState() {
+    try {
+      state.lastSaved = Date.now()
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+    } catch {
+      // storage not available — silently ignore
+    }
+  }
+
+  watch(state, saveState, { deep: true })
+
   let intervalId: ReturnType<typeof setInterval> | null = null
 
   onMounted(() => {
@@ -45,5 +68,5 @@ export function useGameState() {
     if (intervalId !== null) clearInterval(intervalId)
   })
 
-  return { state, click, buyUpgrade, currentCosts, totalPointsPerSecond }
+  return { state, click, buyUpgrade, currentCosts, totalPointsPerSecond, saveState }
 }

@@ -31,11 +31,11 @@
 
 ## Fase 4: Persistentie
 
-🔲 Implementeer opslaan van `GameState` naar localStorage (met `try/catch`)
-🔲 Implementeer laden van `GameState` uit localStorage bij opstart (met fallback)
-🔲 Implementeer auto-save via `watch` op de volledige state (`deep: true`)
-🔲 Sla `lastSaved` timestamp op bij elke save
-🔲 Schrijf unit tests voor de localStorage-fallback bij een parse-fout
+✅ Implementeer opslaan van `GameState` naar localStorage (met `try/catch`)
+✅ Implementeer laden van `GameState` uit localStorage bij opstart (met fallback)
+✅ Implementeer auto-save via `watch` op de volledige state (`deep: true`)
+✅ Sla `lastSaved` timestamp op bij elke save
+✅ Schrijf unit tests voor de localStorage-fallback bij een parse-fout
 
 ## Fase 5: Componenten
 

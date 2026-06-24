@@ -1,5 +1,8 @@
-import { upgradeCost, useGameState } from './useGameState'
+import { upgradeCost, useGameState, loadState } from './useGameState'
+import { createInitialState } from '../types/gameTypes'
 import type { Upgrade } from '../types/gameTypes'
+
+beforeEach(() => localStorage.clear())
 
 const baseUpgrade: Upgrade = {
   id: 'test',
@@ -82,5 +85,24 @@ describe('upgradeCost', () => {
 
   it('scales cost correctly at count 10', () => {
     expect(upgradeCost({ ...baseUpgrade, count: 10 })).toBe(Math.floor(10 * 1.15 ** 10))
+  })
+})
+
+describe('loadState', () => {
+  it('returns initial state when localStorage is empty', () => {
+    expect(loadState()).toEqual(createInitialState())
+  })
+
+  it('returns initial state on invalid JSON', () => {
+    localStorage.setItem('clicker-game-state', '{invalid json')
+    expect(loadState()).toEqual(createInitialState())
+  })
+
+  it('returns parsed state when localStorage contains valid JSON', () => {
+    const saved = { ...createInitialState(), points: 42, totalClicks: 7 }
+    localStorage.setItem('clicker-game-state', JSON.stringify(saved))
+    const result = loadState()
+    expect(result.points).toBe(42)
+    expect(result.totalClicks).toBe(7)
   })
 })
