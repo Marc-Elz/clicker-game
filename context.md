@@ -24,7 +24,8 @@ src/App.vue                      # root
 
 ## Vue 3 Best Practices
 - All logic in `useGameState.ts`; only `ClickerGame.vue` imports it — passes props down, handles emits up
-- Granular `ref`s for primitives; derived values (currentCost, totalPps) via `computed`
+- `useGameState` is a **factory** (not a singleton) — each call returns a fresh state; safe for isolated unit tests
+- Full `GameState` wrapped in one `reactive()` call — no granular refs; derived values (currentCost, totalPps) via `computed`
 - Auto-clicker: `setInterval` in `onMounted`, `clearInterval` in `onUnmounted`
 - `watch(state, save, { deep: true })` for auto-save to localStorage
 

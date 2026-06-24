@@ -16,18 +16,18 @@
 
 ## Fase 3: Game Logic (useGameState)
 
-🔲 Maak `useGameState.ts` aan en exporteer de reactive state
-🔲 Implementeer de `click`-actie (voegt `pointsPerClick` toe aan `points`)
-🔲 Implementeer de kostformule per upgrade (`baseCost * costMultiplier ** count`)
-🔲 Schrijf unit tests voor de kostformule
-🔲 Implementeer de `buyUpgrade`-actie (trek kosten af, verhoog `count`)
-🔲 Implementeer de beveiliging: upgrade alleen koopbaar als `points >= currentCost`
-🔲 Schrijf unit tests voor de `buyUpgrade`-logica (aftrekken, count verhogen, betaalbaarheidscheck)
-🔲 Implementeer `computed` voor `currentCost` per upgrade
-🔲 Implementeer `computed` voor totale `pointsPerSecond` (som van alle upgrades)
-🔲 Schrijf een unit test die verifieert dat `pointsPerSecond` correct wordt berekend
-🔲 Implementeer de auto-clicker via `setInterval` (elke seconde punten toevoegen)
-🔲 Implementeer opruimen van de interval in `onUnmounted`
+✅ Maak `useGameState.ts` aan en exporteer de reactive state
+✅ Implementeer de `click`-actie (voegt `pointsPerClick` toe aan `points`)
+✅ Implementeer de kostformule per upgrade (`baseCost * costMultiplier ** count`)
+✅ Schrijf unit tests voor de kostformule
+✅ Implementeer de `buyUpgrade`-actie (trek kosten af, verhoog `count`)
+✅ Implementeer de beveiliging: upgrade alleen koopbaar als `points >= currentCost`
+✅ Schrijf unit tests voor de `buyUpgrade`-logica (aftrekken, count verhogen, betaalbaarheidscheck)
+✅ Implementeer `computed` voor `currentCost` per upgrade
+✅ Implementeer `computed` voor totale `pointsPerSecond` (som van alle upgrades)
+✅ Schrijf een unit test die verifieert dat `pointsPerSecond` correct wordt berekend
+✅ Implementeer de auto-clicker via `setInterval` (elke seconde punten toevoegen)
+✅ Implementeer opruimen van de interval in `onUnmounted`
 
 ## Fase 4: Persistentie
 
