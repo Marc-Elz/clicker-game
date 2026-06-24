@@ -39,19 +39,18 @@
 
 ## Fase 5: Componenten
 
-🔲 Bouw `ScoreDisplay.vue` (toont punten en pps via props, geen eigen logica)
-🔲 Bouw `GameButton.vue` (knop die een `click`-event emit)
-🔲 Bouw `UpgradeItem.vue` (toont één upgrade-rij, emit `buy`, disabled als niet betaalbaar)
-🔲 Bouw `UpgradeShop.vue` (lijst van `UpgradeItem`s, geeft `buy`-events door omhoog)
-🔲 Bouw `ClickerGame.vue` (orchestreert alle componenten, importeert `useGameState`)
-🔲 Koppel `App.vue` aan `ClickerGame.vue`
-🔲 Handmatige smoke-test: klik, koop upgrade, herlaad pagina — state hersteld
+✅ Bouw `ScoreDisplay.vue` (toont punten en pps via props, geen eigen logica)
+✅ Bouw `GameButton.vue` (knop die een `click`-event emit)
+✅ Bouw `UpgradeItem.vue` (toont één upgrade-rij, emit `buy`, disabled als niet betaalbaar)
+✅ Bouw `UpgradeShop.vue` (lijst van `UpgradeItem`s, geeft `buy`-events door omhoog)
+✅ Bouw `ClickerGame.vue` (orchestreert alle componenten, importeert `useGameState`)
+✅ Koppel `App.vue` aan `ClickerGame.vue`
 
 ## Fase 6: Styling
 
-🔲 Voeg inline layout-stijl toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)
-🔲 Voeg inline stijl toe aan `ScoreDisplay.vue` (groot, leesbaar puntentelling)
-🔲 Voeg inline stijl toe aan `GameButton.vue` (grote klikknop in de vorm van een laptop met active-state via ref)
-🔲 Voeg inline stijl toe aan `UpgradeItem.vue` (rij-layout met naam, kosten en koopknop)
-🔲 Voeg inline animatiestijl toe aan `GameButton.vue` (visuele feedback bij klik)
-🔲 Voeg inline disabled-stijl toe aan `UpgradeItem.vue` (gedimd als niet betaalbaar)
+🔲 Voeg scoped CSS toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)
+🔲 Voeg scoped CSS toe aan `ScoreDisplay.vue` (groot, leesbaar puntentelling)
+🔲 Voeg scoped CSS toe aan `GameButton.vue` (grote klikknop in de vorm van een laptop met active-state via ref)
+🔲 Voeg scoped CSS toe aan `UpgradeItem.vue` (rij-layout met naam, kosten en koopknop)
+🔲 Voeg animatie-CSS toe aan `GameButton.vue` (visuele feedback bij klik)
+🔲 Voeg disabled-stijl toe aan `UpgradeItem.vue` (gedimd als niet betaalbaar)

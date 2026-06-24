@@ -35,4 +35,4 @@ src/App.vue                      # root
 - Auto-clickers add `upgrade.pointsPerSecond * upgrade.count` to points every second via `setInterval`
 - **Cost formula:** `Math.floor(baseCost * costMultiplier ** count)` — recalculate after every purchase
 - **localStorage:** always `try/catch`; fall back to default state on parse error
-- **Styling:** uitsluitend inline styles via `:style="{ ... }"` — geen `style.css`, geen `<style>` blokken in componenten
+- **Styling:** scoped CSS via `<style scoped>` blokken in componenten — geen globale `style.css`

@@ -1,6 +1,7 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div id="app-root" />
+  <ClickerGame />
 </template>
+
+<script setup lang="ts">
+import ClickerGame from './ClickerGame.vue'
+</script>
