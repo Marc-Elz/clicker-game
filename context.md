@@ -36,3 +36,4 @@ src/App.vue                      # root
 - **Cost formula:** `Math.floor(baseCost * costMultiplier ** count)` — recalculate after every purchase
 - **localStorage:** always `try/catch`; fall back to default state on parse error
 - **Styling:** scoped CSS via `<style scoped>` blokken in componenten — geen globale `style.css`
+- **Auto-clicker tests:** `onMounted`/`onUnmounted` vuren niet buiten een component — gebruik `@vue/test-utils` `mount()` + `vi.useFakeTimers()` om interval-gedrag en cleanup te testen

@@ -46,6 +46,11 @@
 ✅ Bouw `ClickerGame.vue` (orchestreert alle componenten, importeert `useGameState`)
 ✅ Koppel `App.vue` aan `ClickerGame.vue`
 
+## Fase 5b: Ontbrekende Tests (auto-clicker)
+
+✅ Schrijf een unit test die verifieert dat de auto-clicker elke seconde punten toevoegt (`vi.useFakeTimers()` + `@vue/test-utils`)
+✅ Schrijf een unit test die verifieert dat de interval gecleared wordt bij `onUnmounted`
+
 ## Fase 6: Styling
 
 ✅ Voeg scoped CSS toe aan `ClickerGame.vue` (gecentreerd, achtergrondkleur)

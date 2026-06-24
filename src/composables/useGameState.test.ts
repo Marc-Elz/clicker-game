@@ -1,6 +1,18 @@
+import { mount } from '@vue/test-utils'
+import { defineComponent } from 'vue'
 import { upgradeCost, useGameState, loadState } from './useGameState'
 import { createInitialState } from '../types/gameTypes'
 import type { Upgrade } from '../types/gameTypes'
+
+function mountGameState() {
+  const Wrapper = defineComponent({
+    setup() {
+      return useGameState()
+    },
+    template: '<div/>',
+  })
+  return mount(Wrapper)
+}
 
 beforeEach(() => localStorage.clear())
 
@@ -85,6 +97,32 @@ describe('upgradeCost', () => {
 
   it('scales cost correctly at count 10', () => {
     expect(upgradeCost({ ...baseUpgrade, count: 10 })).toBe(Math.floor(10 * 1.15 ** 10))
+  })
+})
+
+describe('auto-clicker interval', () => {
+  beforeEach(() => vi.useFakeTimers())
+  afterEach(() => vi.useRealTimers())
+
+  it('voegt pointsPerSecond toe na één seconde', async () => {
+    const wrapper = mountGameState()
+    wrapper.vm.state.upgrades[0].count = 1
+    const pps = wrapper.vm.totalPointsPerSecond
+
+    vi.advanceTimersByTime(1000)
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.vm.state.points).toBeCloseTo(pps)
+  })
+
+  it('stopt met punten toevoegen na unmount', async () => {
+    const wrapper = mountGameState()
+    wrapper.vm.state.upgrades[0].count = 1
+
+    wrapper.unmount()
+    vi.advanceTimersByTime(3000)
+
+    expect(wrapper.vm.state.points).toBe(0)
   })
 })
 
