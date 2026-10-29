@@ -1,5 +1,20 @@
-# Vue 3 + TypeScript + Vite
+# Clicker Game
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A browser clicker game: click to earn points, spend them on upgrades and unlock auto-clickers. Progress is saved between sessions.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Built with Claude Code as an agentic coding exercise: the spec and task list it worked from are in [context.md](context.md) and [tasks.md](tasks.md). Archived small practice project.
+
+## Tech stack
+
+Vue 3, TypeScript, Vite, Vitest
+
+## Getting started
+
+Requires Node.js.
+
+```bash
+npm install
+npm run dev
+```
+
+Run the tests with `npm run test:run`.
